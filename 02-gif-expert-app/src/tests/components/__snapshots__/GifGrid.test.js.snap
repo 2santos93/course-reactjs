@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test for GifGrid component should render ok 1`] = `
+<div
+  className="animate__animated animate__fadeIn"
+>
+  <h1>
+    Dragon Ball
+  </h1>
+  <h2
+    className="animate__animated animate__heartBeat"
+  >
+    Loading
+  </h2>
+  <div
+    className="card-container"
+  />
+</div>
+`;

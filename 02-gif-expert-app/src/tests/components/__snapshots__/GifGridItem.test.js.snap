@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for GifGridItem should render ok 1`] = `
+<div
+  className="card"
+>
+  <img
+    alt="This is a title"
+    className="card-image"
+    src="http://localhost"
+  />
+  <p>
+    This is a title
+  </p>
+</div>
+`;
