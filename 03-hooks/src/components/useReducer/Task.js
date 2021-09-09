@@ -1,37 +1,68 @@
-import ACTIONS from './constant';
-import './style.css';
+import React, { useEffect, useReducer, useRef, forwardRef} from "react";
 
-export const Task = ({id, task, pos, btnClickHandler, done}) => {
-    // const onClickHandler = (action) => {
-    //     setBtnAction({
-    //         payload: id,
-    //         type: action
-    //     })
-    // } 
+import { todoReducer } from "../useCallback/todoReducer";
+import { TaskItem } from "./TaskItem";
+import {TaskForm} from './TaskForm';
+import ACTIONS from "./constant";
 
-    return (
-        <div 
-            style={{display: 'flex', justifyContent: 'space-between'}}
-            className="mt-2"
-        >
-            <h3 
-                className={`${done && 'complete'}`} 
-            >
-                {pos}. {task}
-            </h3>
-            
-            <button
-                className="btn btn-success btn-sm"
-                onClick={ () => btnClickHandler({type:ACTIONS.UPDATE, payload: id}) }
-            >
-                Toggle
-            </button>
-            <button
-                className="btn btn-danger btn-sm"
-                onClick={ () => btnClickHandler({type:ACTIONS.DELETE, payload: id}) }
-            >
-                Delete
-            </button>
-        </div>
-    )
-}
+const init = () => {
+    return JSON.parse(localStorage.getItem("tasks")) || [];
+  };
+
+export const Task = forwardRef((props, ref) => {
+
+  const [tasks, dispatch] = useReducer(todoReducer, [], init);
+  const inputRef = useRef("");
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    ref.current = tasks;
+  }, [tasks]);
+
+  const onClickHandler = (e) => {
+    e.preventDefault();
+
+    const input = inputRef.current;
+
+    if (!input.value.trim().length > 0) return;
+
+    const task = {
+      id: Date.now(),
+      task: input.value,
+      done: false,
+    };
+
+    dispatch({
+      type: ACTIONS.CREATE,
+      payload: task,
+    });
+
+    input.value = "";
+  };
+
+  const btnClickHandler = (action) => {
+    dispatch(action);
+  };
+
+  return (
+    <div className="row">
+      <div className="col-md-3">
+        <TaskForm 
+            onClickHandler={onClickHandler}
+            ref={inputRef}
+        />
+      </div>
+      <div className="offset-md-1 col-md-3">
+        {tasks &&
+          tasks.map((task, pos) => (
+            <TaskItem
+              key={task.id}
+              pos={pos + 1}
+              btnClickHandler={btnClickHandler}
+              task={task}
+            />
+          ))}
+      </div>
+    </div>
+  );
+});
