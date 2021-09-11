@@ -2,7 +2,9 @@ import ACTIONS from "./constant";
 import "./style.css";
 
 export const TaskItem = ({ pos, btnClickHandler, task }) => {
+  
     const {task:taskName, id, done} = task;
+
   return (
     <div
       style={{ display: "flex", justifyContent: "space-between" }}
@@ -27,3 +29,5 @@ export const TaskItem = ({ pos, btnClickHandler, task }) => {
     </div>
   );
 };
+
+TaskItem.displayName='TaskItem';

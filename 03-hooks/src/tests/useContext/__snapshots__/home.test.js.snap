@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page test should render ok 1`] = `
+Array [
+  <h1>
+    Home
+  </h1>,
+  <hr />,
+  "{
+   \\"name\\": \\"nelson\\",
+   \\"email\\": \\"test@test.com\\"
+}",
+  <button
+    className="btn btn-primary"
+    onClick={[Function]}
+  >
+    Set User
+  </button>,
+]
+`;

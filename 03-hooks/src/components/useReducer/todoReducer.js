@@ -1,4 +1,4 @@
-import ACTIONS from '../useReducer/constant';
+import ACTIONS from './constant';
 
 export const todoReducer = (state, action) => {
     let id;
@@ -24,6 +24,4 @@ export const todoReducer = (state, action) => {
         default:
             return state;
     }
-
-      
 }

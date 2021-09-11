@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Task Item Test should render ok 1`] = `
+<div
+  className="mt-2"
+  style={
+    Object {
+      "display": "flex",
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <h3
+    className="false"
+  >
+    1
+    . 
+    Make DInner
+  </h3>
+  <button
+    className="btn btn-success btn-sm"
+    onClick={[Function]}
+  >
+    Toggle
+  </button>
+  <button
+    className="btn btn-danger btn-sm"
+    onClick={[Function]}
+  >
+    Delete
+  </button>
+</div>
+`;

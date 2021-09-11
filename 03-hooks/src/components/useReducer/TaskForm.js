@@ -22,3 +22,5 @@ export const TaskForm = forwardRef(({onClickHandler}, ref) => {
         </form>
     )
 })
+
+TaskForm.displayName='TaskForm';

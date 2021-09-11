@@ -7,7 +7,7 @@ export const TodoApp = () => {
 
   return (
     <>
-      <h1>ToDo App ({tasksRef.current.length})</h1>
+      <h1>ToDo App ({tasksRef.current})</h1>
       <hr />
 
       <Task

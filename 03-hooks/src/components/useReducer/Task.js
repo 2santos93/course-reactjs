@@ -1,13 +1,10 @@
 import React, { useEffect, useReducer, useRef, forwardRef} from "react";
 
-import { todoReducer } from "../useCallback/todoReducer";
+import { todoReducer } from "./todoReducer";
 import { TaskItem } from "./TaskItem";
 import {TaskForm} from './TaskForm';
 import ACTIONS from "./constant";
-
-const init = () => {
-    return JSON.parse(localStorage.getItem("tasks")) || [];
-  };
+import {init} from '../../helper/init';
 
 export const Task = forwardRef((props, ref) => {
 
@@ -16,7 +13,7 @@ export const Task = forwardRef((props, ref) => {
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    ref.current = tasks;
+    ref.current = tasks.length;
   }, [tasks]);
 
   const onClickHandler = (e) => {
@@ -34,7 +31,7 @@ export const Task = forwardRef((props, ref) => {
 
     dispatch({
       type: ACTIONS.CREATE,
-      payload: task,
+      payload: task.id,
     });
 
     input.value = "";
@@ -56,7 +53,7 @@ export const Task = forwardRef((props, ref) => {
         {tasks &&
           tasks.map((task, pos) => (
             <TaskItem
-              key={task.id}
+              key={task.task}
               pos={pos + 1}
               btnClickHandler={btnClickHandler}
               task={task}

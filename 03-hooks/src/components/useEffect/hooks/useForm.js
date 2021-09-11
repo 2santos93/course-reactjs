@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const useForm = (initialState) => {
+export const useForm = (initialState={}) => {
     const [state, setState] = useState(initialState);
     
     // const onSubmitHandler = (e) => {
@@ -10,10 +10,10 @@ export const useForm = (initialState) => {
 
     const onChangeHandler = (e) => {
         const {name, value} = e.target;
-        setState({
-            ...state,
+        setState((prev) => ({
+            ...prev,
             [name]: value
-        })
+        }))
     }
     
     return [state, onChangeHandler];

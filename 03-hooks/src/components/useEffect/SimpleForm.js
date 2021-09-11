@@ -4,9 +4,9 @@ import { useForm } from "./hooks/useForm";
 import './index.css';
 import { Message } from "./Message";
 
-const SimpleForm = (initialState) => {
+const SimpleForm = () => {
 
-    const [state, onChangeHandler, onSubmitHandler] = useForm(initialState);
+    const [state, onChangeHandler, onSubmitHandler] = useForm();
 
     const {name, email} = state;
     

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RefExample test should render ok 1`] = `
+<Fragment>
+  <button
+    className="btn btn-primary"
+    onClick={[Function]}
+  >
+    Hide
+  </button>
+  <ForTest2 />
+</Fragment>
+`;

@@ -1,8 +1,9 @@
 import { useTest } from "./hooks/useTest"
 
-export const Loading = () => {
-    console.log('loading 1');
-    useTest(1);
+export const Loading2 = () => {
+    console.log('loading 2');
+
+    useTest(2);
 
     return (
         <div className="spinner-border text-primary" role="status">
