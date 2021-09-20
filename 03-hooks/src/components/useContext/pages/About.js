@@ -13,7 +13,6 @@ import { Component } from "./Component";
 
 const SpecificComponent = () => {
   let {id} = useParams();
-  console.log("ENTRE");
 
   return (
     <div>

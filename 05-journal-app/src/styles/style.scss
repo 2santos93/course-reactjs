@@ -1,0 +1,8 @@
+@import './base/settings';
+@import './base/base';
+
+// components
+@import './components/auth/auth';
+@import './components/auth/google-btn';
+@import './components/auth/login';
+@import './components/journal/journal';

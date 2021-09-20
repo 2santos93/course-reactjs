@@ -1,0 +1,51 @@
+.auth__header-login {
+  color: darken($primary, 15%)
+}
+
+.auth__input {
+  border: none;
+  border-bottom: 1px solid $light-grey;
+  margin-top: 15px;
+  width: 100%;
+  font-size: 16px;
+  color: $dark-grey;
+
+  &:focus{
+    outline: none;
+    border-bottom: 1px solid $primary;
+  }
+}
+
+.auth__button{
+  border-radius: 4px;
+  height: 36px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: lighten($primary, 5%);
+  color: $white;
+  cursor: pointer;
+  border: 1px solid darken($light-grey, 5%);
+  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
+
+  &:hover{
+    background-color: $primary;
+  }
+
+  &:disabled{
+    background-color: lighten($primary, 15%);
+    cursor: default;
+  }
+}
+
+.auth__footer {
+  margin-top: 20px;
+
+  a {
+    text-decoration: none;
+
+    &:active {
+      color: black;
+      border: 1px solid darken($light-grey, 5%);
+    }
+  }
+}

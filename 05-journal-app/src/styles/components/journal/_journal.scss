@@ -1,0 +1,134 @@
+.journal__main-content {
+  display: flex;
+}
+
+//sidebar
+.sidebar__main{
+  height: 100vh;
+  background-color: $dark-grey;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  color: $white
+}
+
+.sidebar__header{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  overflow: -moz-scrollbars-none;
+}
+
+.sidebar__content{
+  justify-content: center;
+  cursor: pointer;
+  display: flex;
+  margin-top: 30px;
+}
+
+.journal__entries{
+  padding: 10px;
+  overflow-y: scroll;
+  // flex: 1 1 auto;
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+.journal__entry{
+  color: $dark-grey;
+  width: 100%;
+  height: 60px;
+  background-color: $white;
+  border-radius: 2px;
+  display: flex;
+}
+
+.journal__entry-img{
+  background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg');
+  background-size: cover;
+  width: 20%;
+  height: 100%;
+}
+
+.journal__entry-content{
+  width: 60%;
+  padding: 2px;
+
+  p{
+    font-size: 12px;
+  }
+}
+
+.journal__entry-date{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  span{
+    font-size: 12px;
+  }
+}
+
+// content
+.journal__main-navbar{
+  width: 100%;
+  height: 5%;
+  background-color: $primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $white;
+  
+  button{
+    margin-right: 20px;
+  }
+
+  h5{
+    margin: 0 10px;
+  }
+
+}
+
+.journal__mail-content{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 80%;
+
+  textarea{
+    border: none;
+    flex: 1 1 auto;
+    resize: none;
+    width: 100%;
+    color: $dark-grey;
+    font-size: 20px;
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  img{
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 0 5px $dark-grey;
+    border-radius: 5px;
+  }
+
+  input{
+    border: none;
+    resize: none;
+    color: $dark-grey;
+    font-size: 20px;
+    width: 40%;
+
+    &:focus{
+      outline: none;
+      border-bottom: 1px solid $primary;
+    }
+  }
+}
