@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 import { googleAuthProvider } from "../Firebase/firebaseConfig";
 
 import { types } from "./../Types/types";
+import { desactiveNote, setNotes } from "./note";
 import { finishLoading, startLoading } from './ui';
 
 const auth = getAuth();
@@ -60,6 +61,8 @@ export const beforeLogout = () => {
   return async (dispatch) => {
     await signOut(auth);
     dispatch(logout());
+    dispatch(setNotes([]));
+    dispatch(desactiveNote());
   }
 }
 

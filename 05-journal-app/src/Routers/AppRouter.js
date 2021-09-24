@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux';
 import { login } from '../actions/auth';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
+import { beforeSetNotes } from './../actions/note';
 
 export const AppRouter = () => {
 
@@ -19,16 +20,20 @@ export const AppRouter = () => {
   const [state, setState] = useState({loading: true, isLogged: false})
 
   useEffect(() => {
-    onAuthStateChanged(getAuth(), (user) => {
+
+    onAuthStateChanged(getAuth(), async (user) => {
       if(user?.uid){
         dispatch(login(user.uid, user.displayName));
         setState((prev) => setState({...prev, isLogged:true}));
+        dispatch(beforeSetNotes(user.uid));
+
       }else{
         setState((prev) => setState({...prev, isLogged:false}));
       }
       
       setState((prev) => setState({...prev, loading:false}));
     });
+
   }, [setState, dispatch])
   
 if(state?.loading){
