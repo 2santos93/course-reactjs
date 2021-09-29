@@ -29,18 +29,21 @@ export const activeNote = (id, note) => {
   };
 };
 
+//hacer
 export const beforeSetNotes = (id) => {
   return async (dispatch) => {
     const notes = await loadNotes(id);
     dispatch(setNotes(notes));
   };
 };
+
 export const setNotes = (notes) => {
   return {
     type: types.setNotes,
     payload: [...notes],
   };
 };
+//hacer
 
 export const saveNote = (note) => {
   return async (dispatch, getState) => {
@@ -66,6 +69,7 @@ export const refreshNote = (id, note) => {
     },
   };
 };
+//hacer
 
 export const beforeUploadFile = (file) => {
   return async (dispatch, getState) => {

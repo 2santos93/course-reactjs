@@ -9,7 +9,6 @@ export const uploadFileToCloud = async (file) => {
     });
     
     const {secure_url} = await cloudinaryResponse.json();
-    console.log(secure_url);
     return secure_url;
 
   } catch(e){
