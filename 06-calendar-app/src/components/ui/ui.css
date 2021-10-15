@@ -1,0 +1,25 @@
+.add-button{
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 40px;
+  position: fixed;
+  right: 50px;
+  bottom: 25px;
+  z-index: 100;
+  background-color: #007bff;
+}
+
+.delete-button{
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 40px;
+  position: fixed;
+  left: 50px;
+  bottom: 25px;
+  z-index: 100;
+  background-color: #dc3545;
+}

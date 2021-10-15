@@ -9,7 +9,6 @@ export const NavBar = () => {
   const date = moment(active.date).format("dddd, MMMM Do YYYY");
   const saveHandler = (e) => {
     e.preventDefault();
-    console.log(active);
     dispatch(saveNote(active));
   };
 

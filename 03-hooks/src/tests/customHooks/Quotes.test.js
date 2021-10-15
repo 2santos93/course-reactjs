@@ -20,9 +20,9 @@ describe('Quotes test', () => {
       data: null,
       error: false
     })
-
+    
     const wrapper = shallow(<Quotes />);
-
+    
     expect(wrapper).toMatchSnapshot();
   })
 
